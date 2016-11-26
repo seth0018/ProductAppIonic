@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngStorage'])
 
 // .controller('DashCtrl', function($scope) {})
 
@@ -25,7 +25,7 @@ angular.module('starter.controllers', [])
 //   $scope.settings = {
 //     enableFriends: true
 //   };
-// });
+// })
 
 .controller('categoryCtrl', ["$scope", "$stateParams", "Items", function ($scope, $stateParams, Items) {
     $scope.list = Items.getAll().then(
@@ -34,7 +34,9 @@ angular.module('starter.controllers', [])
             console.log($scope.dataJson);
         },
         function (err) {});
+
 }])
+
 .controller('booksCtrl', ["$scope", "$stateParams", "Items", function ($scope, $stateParams, Items) {
         //alert($stateParams.categoryID);
         $scope.books = [];
