@@ -54,7 +54,7 @@ angular.module('starter.services', [])
         getAll: function () {
             return $http({
                 method: 'GET',
-                url: '/data.json'
+                url: 'data.json'
             });
 
         }
